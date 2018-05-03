@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
 import com.google.gson.Gson;
@@ -38,7 +39,8 @@ public class MainActivity extends FragmentActivity {
             new WebViewUtil().initWebview(doughNut,"file:////android_asset/www/chartjsmaster/samples/charts/doughnut.html");
             return rootView;
         }
-        @SuppressLint("AddJavascriptInterface")
+
+        @JavascriptInterface
         private void initDatas(WebView webView){
             ChartEntity entity=new ChartEntity();
             ChartAction action=new ChartAction(getActivity(),entity);
